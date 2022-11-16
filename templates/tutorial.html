@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>HTML 5 Boilerplate</title>
+    <link rel="stylesheet" href="style.css">
+    {%extends "base.html" %}
+    {% block content %}
+  </head>
+  <style>
+  </style>
+  <body>
+  
+	<script src="index.js"></script>
+  <p>do you want to sign up? </p>
+  <a href="{{url_for('signup')}}">sign up</a>
+  <p>{{my_variable | capitalize}}</p>
+  <p> my name as a list is {{letters[2:4]}}</p>
+  <ul>
+    {% for item in mylist %}
+    <li>{{item}}</li>
+    {% endfor %}
+    
+  </ul>
+  {% if 24 in mylist %}
+  <p>i found you</p>
+  {% else %}
+  <p>fuck</p>
+  {% endif %}
+
+
+  {% if userlogedin %}
+  <p> welecome back</p>
+  {% else %}
+  <p> log in</p>
+  {% endif %}
+  <img src="{{url_for('static', filename='vintage.jpg')}}" style="width:500px">
+  <img src="{{url_for('static', filename='cat.png')}}" style="width:500px">
+  <img src="../static/cat.png">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Image_created_with_a_mobile_phone.png/330px-Image_created_with_a_mobile_phone.png" alt="Girl in a jacket" width="500" height="600">
+ 
+
+  </body>
+</html>
+{% endblock %}
