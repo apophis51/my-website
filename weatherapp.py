@@ -1,6 +1,6 @@
 from flask import Flask, render_template, request #this creates website objects
 
-print("coogglll")
+print("cooggdfgglll")
 app = Flask("Website")
 
 @app.route("/home")
