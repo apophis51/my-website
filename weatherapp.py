@@ -20,6 +20,10 @@ def about():
 def signup():
     return render_template("signup.html")
 
+@app.route("/dontclick/")
+def dontclick():
+    return render_template("Dontclick.html")
+
 @app.errorhandler(404)
 def page_not_found(e):
     return  render_template('404.html'), 404

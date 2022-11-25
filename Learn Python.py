@@ -122,9 +122,9 @@ def picklerr():
     print(User1.firstname)
     User2 = User("steven", "schuler")
     storeclass.append(User2)
-    print(User1)
-    print(User2)
-    print(User1)
+    #print(User1)
+    #print(User2)
+    #print(User1)
     ##save(storeclass)
     #save(User1)
     #people = load()
@@ -167,12 +167,146 @@ for x in pickle_transfer:             ### reads all first names from the class
     print(pickle_transfer[counter].firstname)
     counter += 1
 
+#this program reverses a list
+def reversen(x):
+    L = len(x) -1
+    reverse = []
+    for i in x:
+        reverse.append(x[L])
+        L -= 1
+
+    return reverse
+
+#print("check this out",reversen([1,8,3,4]))
+
+def list_xor(x,y,z):
+    L1 = False
+    L2 = False
+    if 5 in z:
+        print(5)
+    for i in y:
+        if x == i:
+            L1 = True
+    for i in z:
+        if x == i:
+            L2 = True
+    if (L1 == True and L2== True) or (L1 == False and L2 == False):
+        return "false"
+    else:
+        return "true"
+print(list_xor(1, [0, 0, 0], [1, 5, 6]))
+
+
+def format_number(number):
+    s = str(number)
+    newstring = ""
+    l = len(s) -1
+    lt = l+1
+    countt = 0;
+    zerocount = 0
+    data = "000"
+    for h in s:
+        zerocount += 1
+        countt += 1
+        if zerocount == 3 and countt != lt:
+            s = s[:l] + "," + s[l:]
+            zerocount = 0
+        l -= 1
+
+
+        
+    return s
+
+#print(format_number(10005456000))
+
+
+def add_dots(x):
+    count = 0
+    new_string = ""
+    for i in x:
+        if count < len(x)-1:
+            new_string = new_string + x[count] + "."
+        else:
+            new_string = new_string + x[count]
+        count += 1
+    return new_string
+
+def remove_dots(y):
+    newstring = ""
+    for i in y:
+        if i == ".":
+            pass
+        else:
+            newstring += i
+    return newstring
+
+print(remove_dots("f.d.s.e"))
+print(add_dots("hello"))
+
+def capital_indexes(x):
+    capitals = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z']
+    return_list =[]
+    counter = 0
+    for i in x:
+        if i in capitals:
+            return_list.append(counter)
+        counter += 1
+    return return_list
+
+#print(capital_indexes("HeLlO"))
+
+def mid(x):
+    length = len(x)
+    split = (length/2) + .5 - 1
+    y = (len(x)/2)
+    if length%2 == 0:
+        return ""
+    else:
+        return x[int(split)]
 
 
 
-input("")
+
+
+#print(mid("aabdfdbaa"))
+
+def online_count(x):
+    keys = x.keys()
+    counter = 0;
+    for i in keys:
+        if x[i] == "online":
+            counter +=1
+    return counter
+
+
+statuses = {
+    "Alice": "online",
+    "Bob": "offline",
+    "Eve": "online",
+}
+#babe = 5
+#print(isinstance(babe,int))
+#print (online_count(statuses))
 """""
 https://realpython.com/beautiful-soup-web-scraper-python/
 https://www.worthwebscraping.com/how-to-use-cookies-and-session-in-python-web-scraping/
 https://realpython.com/python-gui-tkinter/
 """""
+def only_ints(x,y):
+    if y == True:
+        y = "3"
+    t = isinstance(x,int)
+    p = isinstance(y,int)
+    if t == True and p == True:
+        return True
+    else: 
+        return False
+#print(only_ints("a",True))
+
+def is_anagram(x,y):
+    for i in x
+    
+        return False
+    return True
+
+print(is_anagram("test","test"))
